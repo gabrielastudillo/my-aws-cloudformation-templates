@@ -67,7 +67,7 @@ Resources:
       KeyName: GaBoProject
       SecurityGroups:
       - Ref: WebServerSecGroup
-      InstanceType: t3.medium
+      InstanceType: t3.xlarge
       BlockDeviceMappings:
       - DeviceName: "/dev/sdk"
         Ebs:
@@ -80,8 +80,8 @@ Resources:
           !Sub "${EnvironmentName}-PRIV-NETS"
       LaunchConfigurationName:
         Ref: WebAppLaunchConfig
-      MinSize: '3'
-      MaxSize: '5'
+      MinSize: '4'
+      MaxSize: '6'
       TargetGroupARNs:
       - Ref: WebAppTargetGroup
   WebAppLB:
