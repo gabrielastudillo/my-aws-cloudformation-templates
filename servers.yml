@@ -46,7 +46,7 @@ Resources:
         ToPort: 65535
         CidrIp: 0.0.0.0/0
   ProfileWithRolesForOurApp:
-    Type: "AWS::IAM::InstanceProfile"
+    Type: AWS::IAM::InstanceProfile
     Properties: 
       Path: "/"
       Roles:
@@ -65,7 +65,8 @@ Resources:
           aws s3 cp s3://gabocom-demo/index.html          
       ImageId: ami-0ac80df6eff0e70b5
       KeyName: GaBoProject
-      IamInstanceProfile: ProfileWithRolesForOurApp
+      IamInstanceProfile:
+        Ref: ProfileWithRolesForOurApp
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t2.micro
