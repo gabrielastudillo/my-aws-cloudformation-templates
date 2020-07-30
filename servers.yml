@@ -48,9 +48,8 @@ Resources:
   ProfileWithRolesForOurApp:
     Type: AWS::IAM::InstanceProfile
     Properties: 
-      Path: "/"
       Roles:
-      - EC2_to_S3_access
+      - Ref: EC2_to_S3_access
   WebAppLaunchConfig:
     Type: AWS::AutoScaling::LaunchConfiguration
     Properties:
