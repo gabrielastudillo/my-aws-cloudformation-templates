@@ -63,7 +63,6 @@ Resources:
           cd /var/www/html
           aws s3 cp s3://gabocom-demo/index.html ./
       ImageId: ami-0ac80df6eff0e70b5
-      KeyName: GaBoProject
       IamInstanceProfile:
         Ref: ProfileWithRolesForOurApp
       SecurityGroups:
